@@ -9,5 +9,8 @@
         <module name="Java_Practice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Java_Practice" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
