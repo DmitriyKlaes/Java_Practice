@@ -1,20 +1,24 @@
-package ru.Geekbrains;
+package ru.Geekbrains.sem_22_09_22_ClassCar;
 
-public class sem_22_09_22_ClassCar {
+import java.util.List;
+
+public class Base {
     private Engine engine;
     private Wheel wheel1;
     private Wheel wheel2;
     private Wheel wheel3;
     private Wheel wheel4;
     private Transmission transmission;
+    private List<Checkable> checkables;
 
-    public sem_22_09_22_ClassCar() {
-        engine = new Engine();
+    public Base() {
+        engine = new DieselEngine();
         wheel1 = new Wheel();
         wheel2 = new Wheel();
         wheel3 = new Wheel();
         wheel4 = new Wheel();
         transmission = new Transmission();
+        checkables = List.of(engine, wheel1, wheel2, wheel3, wheel4, transmission);
     }
 
     public void start () {
@@ -35,9 +39,16 @@ public class sem_22_09_22_ClassCar {
         engine.stop();
     }
 
+    public void checkAll () {
+        for (Checkable checkable : checkables) {
+            checkable.check();
+        }
+    }
+
     public static void main(String[] args) {
-        sem_22_09_22_ClassCar base = new sem_22_09_22_ClassCar();
+        Base base = new Base();
         base.start();
+        base.checkAll();
         base.drive();
         base.stop();
     }

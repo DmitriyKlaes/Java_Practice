@@ -1,6 +1,6 @@
-package ru.Geekbrains;
+package ru.Geekbrains.sem_22_09_22_ClassCar;
 
-public class Transmission {
+public class Transmission implements Checkable {
 
     private int gearNumber;
 
@@ -11,5 +11,10 @@ public class Transmission {
 
     public int getGearNumber () {
         return gearNumber;
+    }
+
+    @Override
+    public void check () {
+        System.out.println("ok");
     }
 }
